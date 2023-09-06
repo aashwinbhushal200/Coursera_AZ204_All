@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Coursera_AZ204_Functions": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7250",
+      "launchBrowser": false
+    }
+  }
+}
