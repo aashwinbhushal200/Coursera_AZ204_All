@@ -10,7 +10,7 @@ public static class TimerOrchestrator
 {
     //The following example illustrates how to use durable timers for delay,
     ///which sends a reminder every day for 10 days
-    [FunctionName("MyOrchestrator")]
+    [FunctionName("TimerOrchestrator")]
     public static async Task RunOrchestrator(
         [OrchestrationTrigger] IDurableOrchestrationContext context)
     {
