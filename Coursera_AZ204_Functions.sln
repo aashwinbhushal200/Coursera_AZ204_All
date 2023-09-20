@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchPortalFunction", "Watc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WatchFunctionsTests", "WatchFunctionsTests\WatchFunctionsTests.csproj", "{D1C39AB0-38C1-423A-A2B3-653D9B2A3BAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubWebHook1", "GithubWebHook1\GithubWebHook1.csproj", "{74E98592-3916-4799-9912-4221F5C3EDE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GithubWebHook1", "GithubWebHook1\GithubWebHook1.csproj", "{74E98592-3916-4799-9912-4221F5C3EDE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "polling-based _webApp", "polling-based _webApp\polling-based _webApp.csproj", "{6F623023-383F-48B9-8DE7-76A434932796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{74E98592-3916-4799-9912-4221F5C3EDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74E98592-3916-4799-9912-4221F5C3EDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74E98592-3916-4799-9912-4221F5C3EDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F623023-383F-48B9-8DE7-76A434932796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F623023-383F-48B9-8DE7-76A434932796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F623023-383F-48B9-8DE7-76A434932796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F623023-383F-48B9-8DE7-76A434932796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
