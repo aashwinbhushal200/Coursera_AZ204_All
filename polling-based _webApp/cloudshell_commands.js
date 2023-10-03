@@ -5,7 +5,7 @@ cd serverless - demo
 code start
 //define a name for your Azure Storage account.
 export STORAGE_ACCOUNT_NAME = mslsigrstorage$(openssl rand - hex 5)
-echo "Storage Account Name: $STORAGE_ACCOUNT_NAME"
+ echo "Storage Account Name: $STORAGE_ACCOUNT_NAME"
 //command to create a storage account for your function and static website.
 az storage account create \--name $STORAGE_ACCOUNT_NAME \--resource - group PollingAppdemoResourceGroupaz\--kind StorageV2\--sku Standard_LRS
 //create a new Azure Cosmos DB account
