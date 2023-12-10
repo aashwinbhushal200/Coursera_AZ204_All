@@ -1,1 +1,16 @@
 Create and save scripts in Azure PowerShell
+touch "./ConferenceDailyReset.ps1"
+param([string]$resourceGroup)
+
+$adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
+
+For ($i = 1; $i -le 3; $i++)
+{
+    $vmName = "ConferenceDemo" + $i
+    Write-Host "Creating VM: " $vmName
+    New-AzVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Image Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest
+}
+
+Run the script.
+./ConferenceDailyReset.ps1 learn-d96eecf7-0996-4056-a24d-65b1acecc078
+Get-AzResource -ResourceType Microsoft.Compute/virtualMachines
