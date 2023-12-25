@@ -20,9 +20,7 @@ sqlcmd -S tcp:serverNNNNN.database.windows.net,1433 -d marketplaceDb -U '[userna
 Virtual network->	appServerVNET
 Subnet name / Address prefix->	appServerSubnet / 10.0.0.0/24
 
-###
-#Control who can access your database:
-###
+###Control who can access your database:###
 1. Create a database user:
   a. sqlcmd -S tcp:serverNNNNN.database.windows.net,1433 -d marketplaceDb -U '[username]' -P '[password]' -N -l 30 
   //This user is a contained user that has only allow access to the marketplace database.
@@ -38,9 +36,7 @@ Subnet name / Address prefix->	appServerSubnet / 10.0.0.0/24
       GO
 //from T-SQL prompt, enter exit to exit your session and sign back. 
 
-###
-Secure your data in transit, at rest, and on display
-###
+###Secure your data in transit, at rest, and on display###
 //Azure SQL Database enforces Transport Layer Security (TLS) encryption always for all connections, which ensures all data is encrypted in transit between the database and the client. 
 1. In the left menu pane, under Security, select Data encryption. In the data encryption option, verify that Data encryption is set to On. You should also see an encryption status of Encrypted.
 
@@ -48,3 +44,14 @@ Secure your data in transit, at rest, and on display
 //By using the dynamic data masking feature of Azure SQL Database, you can limit the data that is displayed to the user.
 2. on the marketplaceDb database panel, in the left menu pane, under Security, select Dynamic Data Masking.->
 Add a mask for the required field. 
+
+###Monitor your database####
+  1. Azure SQL Database auditing
+    a.  Security, select Auditing->Auditing is turned off by default. To enable it on your database server, toggle Enable Azure AQL Auditing to ON.
+  
+  2. Advanced Data Security for Azure SQL Database
+    a. under Security, select Microsoft Defender for Cloud.-> Select Enable Microsoft Defender for SQL->Periodic recurring scans
+  
+  3. Data discovery & classification
+    a. The Classification tab shows columns within your tables that need to be protected. Some of the columns might have sensitive information or might be considered classified in different countries or regions.
+
