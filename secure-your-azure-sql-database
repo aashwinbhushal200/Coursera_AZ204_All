@@ -19,4 +19,20 @@ sqlcmd -S tcp:serverNNNNN.database.windows.net,1433 -d marketplaceDb -U '[userna
 Virtual network->	appServerVNET
 Subnet name / Address prefix->	appServerSubnet / 10.0.0.0/24
 
-
+###
+#Control who can access your database:
+###
+1. Create a database user:
+  a. sqlcmd -S tcp:serverNNNNN.database.windows.net,1433 -d marketplaceDb -U '[username]' -P '[password]' -N -l 30 
+  //This user is a contained user that has only allow access to the marketplace database.
+  b. CREATE USER ApplicationUser WITH PASSWORD = 'YourStrongPassword1';
+     GO
+//With these credentials, the user is able to authenticate to the database, but they aren't authorized to access any data. Grant this user access.
+2. Grant permissions to a user:
+  a. ALTER ROLE db_datareader ADD MEMBER ApplicationUser;
+    ALTER ROLE db_datawriter ADD MEMBER ApplicationUser;
+    GO
+//You could deny a user's access to other elements within the database using the DENY operator
+  b.  DENY SELECT ON SalesLT.Address TO ApplicationUser;
+      GO
+//from T-SQL prompt, enter exit to exit your session and sign back. 
