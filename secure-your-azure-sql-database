@@ -5,11 +5,13 @@ sqlcmd -S tcp:serverNNNNN.database.windows.net,1433 -d marketplaceDb -U '[userna
   In the SQL server pane, in the left menu pane, under Security, select Networking.Scroll down to Exceptions, select the checkbox for Allow Azure services and resources to 
  access this server, and then select Save. Wait until the system acknowledges this change.
 
-2. Use a database-level IP address rule
+2. Use a database-level IP address rule :T-SQL RULE: 
  EXECUTE sp_set_database_firewall_rule N'My Firewall Rule', '40.112.128.214', '40.112.128.214'
 
 3. Use a server-level IP address rule
  sqlcmd -S tcp:serverNNNNN.database.windows.net,1433 -d marketplaceDb -U '[username]' -P '[password]' -N -l 30
+
+#This IP address is likely to change at some point, breaking your access as soon as that happens. Now look at how virtual network rules can be beneficial in your configuration.
 
 4. Use a server-level virtual network rule:IF VM is running in Azure, you can use a server-level virtual network rule to isolate access, and make it easy to enable future services to gain access to the database.
  Back in the Azure portal and still on the Networking pane, under Virtual networks, select Add a virtual network rule.
