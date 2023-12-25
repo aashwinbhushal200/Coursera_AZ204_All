@@ -36,3 +36,14 @@ Subnet name / Address prefix->	appServerSubnet / 10.0.0.0/24
   b.  DENY SELECT ON SalesLT.Address TO ApplicationUser;
       GO
 //from T-SQL prompt, enter exit to exit your session and sign back. 
+
+###
+Secure your data in transit, at rest, and on display
+###
+//Azure SQL Database enforces Transport Layer Security (TLS) encryption always for all connections, which ensures all data is encrypted in transit between the database and the client. 
+1. In the left menu pane, under Security, select Data encryption. In the data encryption option, verify that Data encryption is set to On. You should also see an encryption status of Encrypted.
+
+//Dynamic data masking
+//By using the dynamic data masking feature of Azure SQL Database, you can limit the data that is displayed to the user.
+2. on the marketplaceDb database panel, in the left menu pane, under Security, select Dynamic Data Masking.->
+Add a mask for the required field. 
