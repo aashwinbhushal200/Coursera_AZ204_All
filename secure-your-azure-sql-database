@@ -1,0 +1,3 @@
+1. Use the server-level allow access to Azure services rule
+  In the SQL server pane, in the left menu pane, under Security, select Networking.Scroll down to Exceptions, select the checkbox for Allow Azure services and resources to access this server, and then select Save. Wait until the system acknowledges this change.
+2.
